@@ -113,9 +113,9 @@ def gacha(message):
     sleep(1.5)
 
     card = cards_data[randint(0, len(cards_data) - 1)]
-    text = f'⛓️Вам выпал(а): {card['caption']}\n🃏Пак: {card['category']}\n🦧Эра: {card['era']}'
+    text = f"⛓️Вам выпал(а): {card['caption']}\n🃏Пак: {card['category']}\n🦧Эра: {card['era']}"
 
-    photo = open(f'lovely_peaches/{card['pathToImg']}.jpg', 'rb')
+    photo = open(f"lovely_peaches/{card['pathToImg']}.jpg", 'rb')
 
     bot.send_photo(
         chat_id=message.chat.id,
@@ -142,7 +142,7 @@ def answer_text(message):
     words = message.text.lower().strip().split()
     if words == ['муд', 'или', 'вайб'] or message.text.lower().strip().split() == [
         'вайб', 'или', 'муд']:
-        bot.reply_to(message, f'Как по мне - это {['вайб', 'муд'][randint(0, 1)]}💁‍♀️')
+        bot.reply_to(message, f"Как по мне - это {['вайб', 'муд'][randint(0, 1)]}💁‍♀️")
     elif words == ['облить', 'субстанцией']:
         if message.reply_to_message:
             replied_user = message.reply_to_message.from_user.username
